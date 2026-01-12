@@ -190,3 +190,10 @@ interface DFAMProject {
   * IndexedDB連携。
   * JSON Export/Import。
   * PWA化設定。
+    
+8. Future Roadmap (Dual Unit Plan)
+* **Dual DFAM System:**
+    * 将来的に、このアプリ内に2台のDFAMユニット（Unit A / Unit B）を搭載し、相互変調（Cross Modulation）やステレオ運用を可能にする予定。
+    * **Architecture Requirement:**
+        * 現在の開発（Phase 1-4）においても、シンセエンジンやシーケンサーのコードは「1つのインスタンス」として完結させず、将来的に `new DFAMUnit()` のように複数生成できる**クラス設計（または再利用可能なフック設計）**を採用すること。
+        * Global State（BPMなど）と Local State（各ユニットのノブ）を明確に分離して実装すること。
